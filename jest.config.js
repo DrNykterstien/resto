@@ -1,10 +1,10 @@
 const config = {
-    rootDir: "./",
-    setupFilesAfterEnv: ["<rootDir>/test/before-test-run.js"],
-    displayName: {
-      name: "RESTO",
-      color: "red",
-    },
-  };
+  rootDir: "./",
+  setupFilesAfterEnv: ["<rootDir>/test/mission.js"],
+  displayName: {
+    name: "RESTO",
+    color: "red",
+  },
+};
   
-  module.exports = config;
+module.exports = config;

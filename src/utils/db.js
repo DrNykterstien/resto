@@ -14,4 +14,12 @@ const dbConnect = async (uri = process.env.DB_URI, opts = {}) => {
   return mongoose.connect(uri, { ...opts, useNewUrlParser: true });
 };
 
-module.exports = { dbConnect };
+const dbDrop = async () => {
+  try {
+    const db = await mongoose.connection.dropDatabase();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+module.exports = { dbConnect, dbDrop };
