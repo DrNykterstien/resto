@@ -9,7 +9,7 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(favicon(path.join(__dirname, '/../public', 'favication.ico')))
+app.use(favicon(path.join(__dirname, '/../public', 'favication.ico')));
 app.disable('x-powered-by');
 app.use(express.static('public'));
 
