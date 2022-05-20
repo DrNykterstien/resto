@@ -1,12 +1,12 @@
 <div id="fh5co-container">
     <%- include('../../partials/introduction'); %>
     <%- include('../../partials/navbar'); %>
-    <%- include('../../partials/about'); %>
+    <%- include('../../partials/about', {about}); %>
     <%- include('../../partials/saying'); %>
     <%- include('../../partials/featuredDishes'); %>
     <%- include('../../partials/foodTypes'); %>
     <%- include('../../partials/menu'); %>
     <%- include('../../partials/upcomingEvents'); %>
-    <%- include('../../partials/tableReservation'); %>
+    <%- include('../../partials/tableReservation', {address, phone, email}); %>
 </div>
-<%- include('../../partials/footer'); %>
+<%- include('../../partials/footer', {developerLink, facebookLink, twitterLink, instagramLink}); %>

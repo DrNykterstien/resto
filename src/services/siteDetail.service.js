@@ -1,5 +1,5 @@
 const SiteDetailModel = require('../models/siteDetail.model');
-const { getOneOrCreate } = require('../utils/crud');
+const { getOneOrCreate, getOne } = require('../utils/crud');
 
 const createSiteDetail = detail => {
   try {
@@ -14,6 +14,20 @@ const createSiteDetail = detail => {
   }
 };
 
+const getSiteDetail = () => {
+  try {
+    return getOne(SiteDetailModel);
+  } catch {
+    return {
+      data: null,
+      success: false,
+      code: 500,
+      message: 'Internal Server Error'
+    };
+  }
+};
+
 module.exports = {
-  createSiteDetail
+  createSiteDetail,
+  getSiteDetail
 };
