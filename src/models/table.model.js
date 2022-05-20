@@ -35,4 +35,4 @@ const tableReservationSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model('TableReservation', tableReservationSchema);
+module.exports = mongoose.model('Table', tableReservationSchema);
