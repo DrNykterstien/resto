@@ -2,6 +2,8 @@ const createTableReservationSchema = require('../routers/schemas/createTable.sch
 const { createTableReservation } = require('../services/table.service');
 const schemaValidation = require('../utils/schemaValidation');
 
+//** --------------------- WEBSITE  --------------------- */
+
 const getHomeRenderingController = async (req, res) => {
   res.render('pages/website/home');
 };

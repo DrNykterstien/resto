@@ -5,7 +5,7 @@ const createTableReservationSchema = Joi.object().keys({
   email: Joi.string().trim().email().required(),
   occation: Joi.string()
     .trim()
-    .allow('wedding', 'birthday', 'other')
+    .valid(...['wedding', 'birthday', 'other'])
     .required(),
   handledAt: Joi.date().min('now'),
   message: Joi.string().trim().min(5).max(500).required()
