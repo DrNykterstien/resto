@@ -1,4 +1,5 @@
 const createTableReservationSchema = require('../routers/schemas/createTable.schema');
+const { getEvents } = require('../services/event.service');
 const { getSiteDetail } = require('../services/siteDetail.service');
 const { createTableReservation } = require('../services/table.service');
 const schemaValidation = require('../utils/schemaValidation');
@@ -6,8 +7,9 @@ const schemaValidation = require('../utils/schemaValidation');
 //** --------------------- WEBSITE  --------------------- */
 
 const getHomeRenderingController = async (req, res) => {
-  const { data } = await getSiteDetail();
-  res.render('pages/website/home', { ...data });
+  const siteDetail = await getSiteDetail();
+  const events = await getEvents();
+  res.render('pages/website/home', { ...siteDetail.data, events: events.data });
 };
 
 const createTableReservationRenderingController = async (req, res) => {

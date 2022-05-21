@@ -81,8 +81,30 @@ const getOne = async (model, where = {}, fields = {}) => {
   }
 };
 
+const getMany = async (
+  model,
+  where = {},
+  fields = {},
+  sort = { createdAt: 1 }
+) => {
+  const docs = await model
+    .find(where)
+    .select({ ...fields })
+    .sort({ ...sort })
+    .lean()
+    .exec();
+
+  return {
+    data: docs,
+    success: true,
+    code: 200,
+    message: 'Operation done successfully'
+  };
+};
+
 module.exports = {
   createOne,
   getOneOrCreate,
-  getOne
+  getOne,
+  getMany
 };

@@ -1,5 +1,5 @@
 const EventModel = require('../models/event.model');
-const { createOne } = require('../utils/crud');
+const { createOne, getMany } = require('../utils/crud');
 
 const createEvent = event => {
   try {
@@ -14,6 +14,20 @@ const createEvent = event => {
   }
 };
 
+const getEvents = () => {
+  try {
+    return getMany(EventModel);
+  } catch {
+    return {
+      data: null,
+      success: false,
+      code: 500,
+      message: 'Internal Server Error'
+    };
+  }
+};
+
 module.exports = {
-  createEvent
+  createEvent,
+  getEvents
 };

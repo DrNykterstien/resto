@@ -9,33 +9,15 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="fh5co-event to-animate-2">
-                    <h3>Free to Eat Party</h3>
-                    <span class="fh5co-event-meta">March 19th, 2023</span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae molestiae aliquid cupiditate
-                        doloribus ex dicta aspernatur perspiciatis necessitatibus, beatae eveniet ducimus qui esse fuga.
-                        Enim fugiat in veritatis quae reprehenderit.</p>
+            <% events.forEach( (event) => { %> 
+                <div class="col-md-4">
+                    <div class="fh5co-event to-animate-2">
+                        <h3><%= event.title %></h3>
+                        <span class="fh5co-event-meta"><%= event.handledAt %></span>
+                        <p><%= event.detail %></p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fh5co-event to-animate-2">
-                    <h3>Free to Eat Party</h3>
-                    <span class="fh5co-event-meta">March 19th, 2023</span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae molestiae aliquid cupiditate
-                        doloribus ex dicta aspernatur perspiciatis necessitatibus, beatae eveniet ducimus qui esse fuga.
-                        Enim fugiat in veritatis quae reprehenderit.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="fh5co-event to-animate-2">
-                    <h3>Free to Eat Party</h3>
-                    <span class="fh5co-event-meta">March 19th, 2023</span>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae molestiae aliquid cupiditate
-                        doloribus ex dicta aspernatur perspiciatis necessitatibus, beatae eveniet ducimus qui esse fuga.
-                        Enim fugiat in veritatis quae reprehenderit.</p>
-                </div>
-            </div>
+            <% }); %> 
         </div>
     </div>
 </div>
