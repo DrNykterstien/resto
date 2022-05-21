@@ -8,6 +8,8 @@ const createSiteDetailSchema = require('../schemas/createSiteDetail.schema');
 const {
   createSiteDetailController
 } = require('../../controllers/siteDetail.controller');
+const createEventSchema = require('../schemas/createEvent.schema');
+const { createEventController } = require('../../controllers/event.controller');
 
 const router = Router();
 
@@ -23,6 +25,13 @@ router
   .post(
     schemaValidationMiddleware(createSiteDetailSchema, 'body'),
     createSiteDetailController
+  );
+
+router
+  .route('/event')
+  .post(
+    schemaValidationMiddleware(createEventSchema, 'body'),
+    createEventController
   );
 
 module.exports = router;
